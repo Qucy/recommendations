@@ -114,16 +114,16 @@ print(f"Recommendations for user 42: {titles[0, :3]}")
 
 
 # Export the query model.
-with tempfile.TemporaryDirectory() as tmp:
-  path = os.path.join(tmp, "model")
-
-  # Save the index.
-  tf.saved_model.save(index, path)
-
-  # Load it back; can also be done in TensorFlow Serving.
-  loaded = tf.saved_model.load(path)
-
-  # Pass a user id in, get top predicted movie titles back.
-  scores, titles = loaded(["42"])
-
-  print(f"Recommendations: {titles[0][:3]}")
+# with tempfile.TemporaryDirectory() as tmp:
+#   path = os.path.join(tmp, "model")
+#
+#   # Save the index.
+#   tf.saved_model.save(index, path)
+#
+#   # Load it back; can also be done in TensorFlow Serving.
+#   loaded = tf.saved_model.load(path)
+#
+#   # Pass a user id in, get top predicted movie titles back.
+#   scores, titles = loaded(["42"])
+#
+#   print(f"Recommendations: {titles[0][:3]}")
